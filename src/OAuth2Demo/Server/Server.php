@@ -18,13 +18,16 @@ class Server implements ControllerProviderInterface
      */
     public function setup(Application $app)
     {
+
+        $sqliteFile = __DIR__.'/../../../data/oauth.sqlite';
+        $storage = new Pdo(array('dsn' => 'mysql:dbname=golf;host=127.0.0.1', 'username' => 'root', 'password' => 'rubiks'));
+
+var_dump(get_class_methods($storage), "first");
         // ensure our Sqlite database exists
-        if (!file_exists($sqliteFile = __DIR__.'/../../../data/oauth.sqlite')) {
-            $this->generateSqliteDb();
+        if (true || !file_exists($sqliteFile)) {
+            $this->generateSqliteDb($storage);
         }
 
-        // create PDO-based sqlite storage
-        $storage = new Pdo(array('dsn' => 'sqlite:'.$sqliteFile));
 
         // create array of supported grant types
         $grantTypes = array(
@@ -67,8 +70,9 @@ class Server implements ControllerProviderInterface
         return $routing;
     }
 
-    private function generateSqliteDb()
+    private function generateSqliteDb($storage)
     {
+        //var_dump($storage, "BRIAN CRANSTON");
         include_once(__DIR__.'/../../../data/rebuild_db.php');
     }
 }
