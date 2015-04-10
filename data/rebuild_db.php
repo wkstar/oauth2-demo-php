@@ -1,24 +1,8 @@
 <?php
 
-// determine where the sqlite DB will go
-$dbfile = __DIR__.'/oauth.sqlite';
-
-// remove sqlite file if it exists
-if (file_exists($dbfile)) {
-    unlink($dbfile);
-}
-
-if (!is_writable(__DIR__)) {
-    // try to set permissions.
-    if (!@chmod(__DIR__, 0777)) {
-        throw new Exception("Unable to write to $dbfile");
-    }
-}
-
 $db = new PDO(sprintf('sqlite:%s', $dbfile));
 $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-var_dump(get_class_methods($db), "gotgas");
-var_dump(get_class_methods($storage));
+echo ("\nREBUILDING DB\n");
 $db = $storage->getDb();
 // rebuild the DB
 //$db = $storage;
@@ -31,7 +15,7 @@ $db->exec('CREATE TABLE oauth_refresh_tokens (refresh_token TEXT, client_id TEXT
 
 // add test data
 $db->exec('INSERT INTO oauth_clients (client_id, client_secret) VALUES ("demoapp", "demopass")');
-$db->exec(sprintf('INSERT INTO oauth_users (username, password) VALUES ("demouser", "%s")', sha1("testpass")));
+//$db->exec(sprintf('INSERT INTO oauth_users (username, password) VALUES ("demouser", "%s")', sha1("testpass")));
 
 chmod($dbfile, 0777);
 // $db->exec('INSERT INTO oauth_access_tokens (access_token, client_id) VALUES ("testtoken", "Some Client")');

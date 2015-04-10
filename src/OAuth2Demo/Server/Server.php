@@ -22,12 +22,10 @@ class Server implements ControllerProviderInterface
         $sqliteFile = __DIR__.'/../../../data/oauth.sqlite';
         $storage = new Pdo(array('dsn' => 'mysql:dbname=golf;host=127.0.0.1', 'username' => 'root', 'password' => 'rubiks'));
 
-var_dump(get_class_methods($storage), "first");
-        // ensure our Sqlite database exists
-        if (true || !file_exists($sqliteFile)) {
+        //Todo - Put flag in to generate db
+        if (false) {
             $this->generateSqliteDb($storage);
         }
-
 
         // create array of supported grant types
         $grantTypes = array(
@@ -72,7 +70,6 @@ var_dump(get_class_methods($storage), "first");
 
     private function generateSqliteDb($storage)
     {
-        //var_dump($storage, "BRIAN CRANSTON");
         include_once(__DIR__.'/../../../data/rebuild_db.php');
     }
 }
