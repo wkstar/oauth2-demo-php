@@ -1,8 +1,14 @@
 {
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/wkstar/oauth2-server-php"
+        }
+    ],
     "require": {
         "silex/silex": "1.2.*@dev",
         "symfony/twig-bridge": "2.1.*",
-        "bshaffer/oauth2-server-php": "v1.0",
+        "bshaffer/oauth2-server-php": "dev-develop",
         "bshaffer/oauth2-server-httpfoundation-bridge": "v1.0",
         "guzzle/guzzle": "~3.7"
     },
