@@ -26,19 +26,15 @@ class Resource
         // get the oauth response (configured in src/OAuth2Demo/Server/Server.php)
         $response = $app['oauth_response'];
 
+        $scope = $app['request']->query->get('scope');
+
+        $token = $server->verifyResourceRequest($app['request'], $response, $scope);
+
         if (!$server->verifyResourceRequest($app['request'], $response)) {
             return $server->getResponse();
         } else {
-            // return a fake API response - not that exciting
-            // @TODO return something more valuable, like the name of the logged in user
-            $api_response = array(
-                'friends' => array(
-                    'john',
-                    'matt',
-                    'jane'
-                )
-            );
-            return new Response(json_encode($api_response));
+
+            return new Response(json_encode(array('valid_key' => true)));
         }
     }
 }

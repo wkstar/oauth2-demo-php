@@ -23,7 +23,7 @@ class Server implements ControllerProviderInterface
         $storage = new Pdo(array('dsn' => 'mysql:dbname=golf;host=127.0.0.1', 'username' => 'root', 'password' => 'rubiks'));
 
         //Todo - Put flag in to generate db
-        if (!false) {
+        if (false) {
             $this->generateSqliteDb($storage);
         }
 
