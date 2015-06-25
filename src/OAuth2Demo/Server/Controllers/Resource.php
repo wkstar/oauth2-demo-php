@@ -30,11 +30,11 @@ class Resource
 
         $token = $server->verifyResourceRequest($app['request'], $response, $scope);
 
-        if (!$server->verifyResourceRequest($app['request'], $response)) {
+        if (!$token) {
             return $server->getResponse();
         } else {
-
-            return new Response(json_encode(array('valid_key' => true)));
+            print_r($server->getResponse());
+            return new Response(json_encode(array('valid_key' => true, 'scope' => $scope)));
         }
     }
 }
