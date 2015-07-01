@@ -33,7 +33,6 @@ class Resource
         if (!$token) {
             return $server->getResponse();
         } else {
-            print_r($server->getResponse());
             return new Response(json_encode(array('valid_key' => true, 'scope' => $scope)));
         }
     }
