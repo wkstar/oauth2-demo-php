@@ -2,7 +2,7 @@
     "repositories": [
         {
             "type": "vcs",
-            "url": "https://github.com/wkstar/oauth2-server-php"
+            "url": "ssh://git@stash.iteedevelopment.com:7999/golf/oauth2-server-php.git"
         }
     ],
     "require": {
