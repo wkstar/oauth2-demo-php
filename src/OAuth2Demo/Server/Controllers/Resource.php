@@ -28,12 +28,15 @@ class Resource
 
         $scope = $app['request']->query->get('scope');
 
-        $token = $server->verifyResourceRequest($app['request'], $response, $scope);
+        $valid = $server->verifyResourceRequest($app['request'], $response, $scope);
+        $token = $server->getResourceController()->getToken();
 
-        if (!$token) {
+        if (!$valid) {
             return $server->getResponse();
         } else {
-            return new Response(json_encode(array('valid_key' => true, 'scope' => $scope)));
+            return new Response(json_encode(array(  'valid_key' => true,
+                                                    'username'  => $token['user_id'],
+                                                    'scope'     => $scope)));
         }
     }
 }
