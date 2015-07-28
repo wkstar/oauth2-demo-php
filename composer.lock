@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "9cd28c4cb1dee336f311615404d8e1c4",
+    "hash": "b23475e54341d391a546cdfb38dc1ae4",
     "packages": [
         {
             "name": "bshaffer/oauth2-server-httpfoundation-bridge",
@@ -55,8 +55,14 @@
             "version": "dev-master",
             "source": {
                 "type": "git",
-                "url": "ssh://git@stash.iteedevelopment.com:7999/golf/oauth2-server-php.git",
+                "url": "https://github.com/wkstar/oauth2-server-php.git",
                 "reference": "b0b431f6b0bf8b2b1c9d48bb540113ec44276c94"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/wkstar/oauth2-server-php/zipball/b0b431f6b0bf8b2b1c9d48bb540113ec44276c94",
+                "reference": "b0b431f6b0bf8b2b1c9d48bb540113ec44276c94",
+                "shasum": ""
             },
             "require": {
                 "php": ">=5.3.9"
@@ -89,6 +95,9 @@
                 "oauth",
                 "oauth2"
             ],
+            "support": {
+                "source": "https://github.com/wkstar/oauth2-server-php/tree/master"
+            },
             "time": "2015-07-03 16:02:12"
         },
         {
@@ -540,12 +549,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/HttpKernel.git",
-                "reference": "ba68a753dca73e2bb75de4a5fb8aabbda0dd3874"
+                "reference": "a3f0ed713255c0400a2db38b3ed01989ef4b7322"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/HttpKernel/zipball/ba68a753dca73e2bb75de4a5fb8aabbda0dd3874",
-                "reference": "ba68a753dca73e2bb75de4a5fb8aabbda0dd3874",
+                "url": "https://api.github.com/repos/symfony/HttpKernel/zipball/a3f0ed713255c0400a2db38b3ed01989ef4b7322",
+                "reference": "a3f0ed713255c0400a2db38b3ed01989ef4b7322",
                 "shasum": ""
             },
             "require": {
@@ -609,7 +618,7 @@
             ],
             "description": "Symfony HttpKernel Component",
             "homepage": "https://symfony.com",
-            "time": "2015-07-22 11:18:53"
+            "time": "2015-07-26 10:44:22"
         },
         {
             "name": "symfony/routing",
@@ -807,6 +816,7 @@
         "bshaffer/oauth2-server-php": 20
     },
     "prefer-stable": false,
+    "prefer-lowest": false,
     "platform": [],
     "platform-dev": []
 }
