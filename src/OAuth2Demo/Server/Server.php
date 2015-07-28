@@ -18,9 +18,19 @@ class Server implements ControllerProviderInterface
      */
     public function setup(Application $app)
     {
-
         $sqliteFile = __DIR__.'/../../../data/oauth.sqlite';
-        $storage = new Pdo(array('dsn' => 'mysql:dbname=golf;host=127.0.0.1', 'username' => 'root', 'password' => 'rubiks'));
+
+        $dbName = 'golf';
+        if (function_exists('getallheaders')) {
+            $headers = getallheaders();
+            if ('test' === $headers['Environment']) {
+               $dbName = 'test';
+            }
+        }
+
+        $dsn = sprintf('mysql:dbname=%s;host=127.0.0.1', $dbName);
+
+        $storage = new Pdo(array('dsn' => $dsn, 'username' => 'root', 'password' => 'rubiks'));
 
         //Todo - Put flag in to generate db
         if (false) {
