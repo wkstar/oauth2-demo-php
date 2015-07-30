@@ -30,9 +30,12 @@ To check login details, use the oAuth class, login function:
 
 
 
-Tasks
-
-Remove references to old token.
-Add a call to the checkScope function for every Controller that needs the user to be logged in.
-Define the Authority required for each Controller.
-Make sure the logic in the oAuth server defining each user's Authority is correct.
+### Tasks
+- [x] Install oAuth server.
+- [ ] Ensure database structure is created from sql scripts.
+- [ ] Write tests for all Controllers.
+- [ ] Remove references to old token in all PHP.
+- [ ] Remove sys_user.token in mySql.
+- [ ] Add a call to the checkScope function for every Controller that needs the user to be logged in.
+- [ ] Define the Authority required for each Controller.
+- [ ] Make sure the logic in the oAuth server defining each user's Authority is correct.
