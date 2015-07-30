@@ -8,23 +8,26 @@ asdfasdf
 ![oAuth Login](http://stash.iteedevelopment.com:7990/projects/GOLF/repos/oauth-application/browse/docs/images/oauthLogin.png?at=8beb9419a962e9998b2a8f7501bef36639d294a8&raw)
 
 To check login details, use the oAuth class, login function:
-```php
-    $user_name = $_REQUEST['user_name'];
-    $user_pwd = $_REQUEST['user_pwd'];
-    ...
-    $oAuth = $this->oAuth->login($user_name, $user_pwd);
-    
-    //Any sort of error with authentication.
-    if( isset($oAuth['error']) || 
-        !isset($oAuth['access_token'])) {
-        
-        //Deal with errors
-        ...
-        
-    }
-    //Return access token to client (mobile app).
-    $oAuthAccessToken = $oAuth['access_token'];
 ```
+$user_name = $_REQUEST['user_name'];
+$user_pwd = $_REQUEST['user_pwd'];
+...
+$oAuth = $this->oAuth->login($user_name, $user_pwd);
+
+//Any sort of error with authentication.
+if( isset($oAuth['error']) || 
+    !isset($oAuth['access_token'])) {
+    
+    //Deal with errors
+    ...
+    
+}
+//Return access token to client (mobile app).
+$oAuthAccessToken = $oAuth['access_token'];
+
+```
+
+
 sdfsdf
 sdfsdf
 
