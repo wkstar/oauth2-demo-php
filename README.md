@@ -22,8 +22,11 @@ To check login details, use the oAuth class, login function:
 ```
 
 ## Authorise
-
+asdasd
 ![oAuth Authorise](http://stash.iteedevelopment.com:7990/projects/GOLF/repos/oauth-application/browse/docs/images/oauthAuthorise.png?at=8beb9419a962e9998b2a8f7501bef36639d294a8&raw)
+asdasd
+
+![oAuth Login](http://stash.iteedevelopment.com:7990/projects/GOLF/repos/oauth-application/browse/docs/images/oauthLogin.png?at=8beb9419a962e9998b2a8f7501bef36639d294a8&raw)
 
 ```php
     $this->username = $this->oAuth->checkScope();
