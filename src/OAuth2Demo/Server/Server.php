@@ -23,7 +23,8 @@ class Server implements ControllerProviderInterface
         $dbName = 'golf';
         if (function_exists('getallheaders')) {
             $headers = getallheaders();
-            if ('test' === $headers['Environment']) {
+            if (    isset($headers['Environment']) &&
+                    'test' === $headers['Environment']) {
                $dbName = 'test';
             }
         }
